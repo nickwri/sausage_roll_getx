@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:sausage_getx/domain/basket.dart';
 import 'package:sausage_getx/models/product.dart';
+import 'package:sausage_getx/navigation/routes.dart';
 import 'package:sausage_getx/repositories/product_repository.dart';
 
 class HomeController extends GetxController {
@@ -15,16 +16,24 @@ class HomeController extends GetxController {
 
   void addToBasket() {
     _basket.add();
-    _showSnackBar();
+    _showSnackBar('A ${product.articleName} has been added to your basket');
   }
 
-  void _showSnackBar() {
+  void _showSnackBar(String message) {
     if (!Get.isSnackbarOpen) {
       Get.rawSnackbar(
-        message: 'A ${product.articleName} has been added to your basket',
+        message: message,
         duration: const Duration(milliseconds: 1000),
         snackPosition: SnackPosition.TOP,
       );
+    }
+  }
+
+  void onBasketTap() {
+    if (quantity > 0) {
+      Get.toNamed(Routes.basket);
+    } else {
+      _showSnackBar('Your basket is empty');
     }
   }
 }

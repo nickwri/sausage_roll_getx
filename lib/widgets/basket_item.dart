@@ -27,7 +27,7 @@ class BasketItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _thumbnail(),
-          _text('$quantity'),
+          _text('Qty: $quantity'),
           _text('£${formatCurrency(totalItemPrice)}'),
         ],
       ),

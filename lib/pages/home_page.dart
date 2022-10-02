@@ -54,7 +54,7 @@ class HomePage extends GetView<HomeController> {
       actions: [
         Builder(
             builder: (context) => GestureDetector(
-                  onTap: () => Get.toNamed(Routes.basket),
+                  onTap: controller.onBasketTap,
                   child: _basketIcon(),
                 )),
       ],
