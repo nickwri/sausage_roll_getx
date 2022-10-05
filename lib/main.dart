@@ -14,8 +14,8 @@ void main() {
 }
 
 void _initApp() {
-  Get.put(ProductRepository());
-  Get.put(Basket(Get.find()));
+  Get.put<IProductRepository>(ProductRepository());
+  Get.put<IBasket>(Basket(Get.find()));
 }
 
 class MyApp extends StatelessWidget {

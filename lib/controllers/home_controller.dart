@@ -2,11 +2,10 @@ import 'package:get/get.dart';
 import 'package:sausage_getx/domain/basket.dart';
 import 'package:sausage_getx/models/product.dart';
 import 'package:sausage_getx/navigation/routes.dart';
-import 'package:sausage_getx/repositories/product_repository.dart';
 
 class HomeController extends GetxController {
-  final ProductRepository _productRepository;
-  final Basket _basket;
+  final IProductRepository _productRepository;
+  final IBasket _basket;
 
   HomeController(this._productRepository, this._basket);
 
